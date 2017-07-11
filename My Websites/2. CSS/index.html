@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+    <title>Learning CSS</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<style type="text/css">
+		.large {
+			font-size: 200%;
+		}
+		
+		#green {
+			color: green;
+		}
+		
+		.underline{
+			text-decoration: underline;
+		}
+		
+		.newBox {
+			background-color: red;
+			border: 2px yellow inset;
+/*			position: relative;
+			margin: 100px 50px;
+			padding: 10px;*/
+		}
+		
+		.blueBox{
+			background-color: blue;
+			border-style: ridge solid dotted dashed;
+			border-width: 10px 5px 3px 1px;
+		}
+		
+		.green{
+			background-color: green;
+			border-radius: 10px;
+			font-weight: bold;
+			text-indent: inherit;
+		}
+		
+		div {
+			height: 100px;
+			width: 100px;
+			float: left;
+			margin: 20px;
+			
+		}
+		/* Removing default margins and paddings from P tag */
+		p {
+			font-family: sans-serif;
+			font-size: 10px;
+			font-style: italic;
+			color: white;
+			padding: 0;
+			margin: 0;
+		}
+		
+		.box {
+			width: 200px;
+			height: 50px;
+			background-color: green;
+			text-align: justify;
+		}
+		
+		a:visited {
+			color: green;
+		}
+		
+		a:hover {
+			color: red;
+			font-size: 50px;
+		}
+		
+    </style> 
+</head>
+<body>
+	<div class="newBox">
+    	<p class="large">This is some text.</p>
+	</div>
+	
+	<div class="blueBox">
+		<p id="blue" class="large">Some more thext.</p>
+	</div>
+	<div class="green">
+	<p>The third <span class="underline large">word</span> on this paragraph is underlined.</p>
+	</div>
+	
+	<div class="box"> 
+		<p>This is a div This is a div This is a div This is a divThis is a divThis is a divThis is a divThis is a div</p>
+	</div>
+	
+	<br>
+	<a href="https://www.google.com" target="_blank"> Google</a>
+	
+	<a href="https://www.google.se" target="_blank"> Google Se</a>
+	
+	
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Fingers Game</title>
+		
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+	</head>
+	<body>
+		
+		<p >How many fingers ?</p>
+		<p id="array"></p>
+		<!--<p >How many fingers ?</p>
+		<input id="answer" />
+		<button id="myButton1">Click</button>-->
+		
+		<br>
+		
+		<p>How many fingers are you holding ?</p>
+		
+		<input id="myNumber">
+		<button id="guess"> Guess! </button>
+		
+		<script type="text/javascript">
+			
+			/*document.getElementById("myButton1").onclick=function() {
+			
+				var x = Math.random();
+			
+				x = 6*x;
+			
+				//floor rounds the x to the nearest hole number
+				x = Math.floor(x);
+			
+				if(x==document.getElementById("answer").value) {
+					alert("Correct!!!");
+				} else
+					{
+						alert("Not Correct!!!" + " " + "It was: " + x);
+						}
+				}*/
+			
+			//For Loop Example
+			var myArray = ["pizza", "chocolate", "chips"];
+			
+			var arrayString = "";
+			
+			
+			for (var i = 0; i < myArray.length ; i++) {
+				//alert(myArray[i]);
+				arrayString = arrayString + myArray[i] + " ";
+			}
+			
+			console.log(arrayString);
+			
+			document.getElementById("array").innerHTML=arrayString;
+			
+			//While loop example
+			var j = 0;
+			
+			while(j < myArray.length)
+				{
+					arrayString = arrayString + myArray[j] + " ";
+					j++;
+				}
+			
+			document.getElementById("array").innerHTML=arrayString;
+			
+			//Guessing game
+			document.getElementById("guess").onclick=function() {
+				
+				var gotIt = false;
+				var count = 0;
+				
+				while(gotIt == false) {
+					
+					var x = Math.random();
+					x = 6*x;
+				
+					x= Math.floor(x);
+				
+					var inText = document.getElementById("myNumber").value;
+				
+					if (x == inText){
+						alert("I got it ! The value is " + x);
+						gotIt = true;
+						count++;
+						
+					}
+					else{
+						alert("I didn't get it ! The value was " + x);
+						count++;
+					}
+					
+				}
+				alert("It took me : " + count + "gueses.");
+			}
+			
+			//Create a function with name alertMe()
+			function add(a,b) {
+				return(a+b);
+			}
+			
+			//and calling the function.
+			//alertMe();
+			
+			//using the funtion.
+			//document.getElementById("array").innerHTML=add(5,6);
+			
+		</script>
+	</body>
+</html>

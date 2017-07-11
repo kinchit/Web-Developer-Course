@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+    <title>Learning CSS</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+ 
+	<style>
+		#circle {
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			border-radius: 1px;
+			border-radius: 50px;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<!--<p id="text">Some Text</p>-->
+	
+	<button id="textChanger">Change First Div Text</button>
+	
+	<div id="firstDiv"> This is some text</div>
+	<br>
+	
+	<button id="textAppender">Append some text</button>
+	
+	<div id="secondDiv">Javascript is...</div>
+	<br>
+	
+	<button id="textCreator">Create some text</button>
+	
+	<div id="emptyDiv"></div>
+	<br>
+	
+	<div id="circle"></div>
+	
+	<br>
+	
+	<input id="inputId" type="text" value="test" />
+	
+	<button id="textReplace">Change First Div Text</button>
+	
+	<div id="firstDiv1"> This is some text</div>
+	<br>
+	
+	<button id="textArray">Dispaly Array Value</button>
+	
+	<div id="firstText"> This is some text</div>
+	<br>
+	
+	//Verifying If condition
+	<p>What is the weather ?</p>
+	<input id="myId">
+	<button id="myButton">Click Me !</button>
+	
+	<script type="text/javascript">
+		
+		//This is a comment
+		
+		//alert(document.getElementById("text").innerHTML);
+		
+		//We can also set the text
+		//document.getElementById("text").innerHTML="Some More Text";
+		
+		// variable used for input value using input id
+		var newText = document.getElementById("inputId").value;
+		
+		//variable used for id
+		var divId = "circle";
+		
+		//variable is used in js code
+		document.getElementById("textReplace").onclick=function() {
+			
+			newText = document.getElementById("inputId").value;
+			
+			document.getElementById("firstDiv1").innerHTML=newText;
+		}
+		
+		document.getElementById("textChanger").onclick=function() {
+			document.getElementById("firstDiv").innerHTML="this is awesome!";
+		}
+		
+		document.getElementById("textAppender").onclick=function() {
+			document.getElementById("secondDiv").innerHTML = document.getElementById("secondDiv").innerHTML + "great!!";
+		}
+		
+		document.getElementById("textCreator").onclick=function() {
+			document.getElementById("emptyDiv").innerHTML = "<ol><li>Cat</li><li>Dog</li></ol>";
+		}
+		
+		document.getElementById(divId).onclick=function() {
+			document.getElementById(divId).style.display="none";
+		}
+		
+		// Creating an array for js [one way to create]
+		var myArray = new Array();
+		myArray[0] = "Kinchit";
+		myArray[1] = "Raja";
+		
+		//logging array to console
+		console.log(myArray);
+		
+		//other way to create an array
+		otherArray = ["rain","sunshine"];
+		
+		//Adding an item to the end of the array
+		otherArray.push("snow");
+		
+		//removing an item where [splice(starting index, number of items to remove)]
+		otherArray.splice(1,1);
+		
+		//adding element at the middle of array [splice(before the index, number of items to remove, item to add at location specified in first location)] We can also add more than 1 item
+		otherArray.splice(2, 0, "hail");
+		
+		
+				console.log(otherArray);
+				console.log(otherArray.length);
+		
+		//using an array
+		document.getElementById("textArray").onclick=function() {
+		document.getElementById("firstText").innerHTML=otherArray[1];
+		}
+		
+		//Checking if loop
+		var x = 1;
+		
+		if(x == 1){
+			alert("x is 1!");
+		} else {
+			alert("x is not 1!");
+		}
+		
+		
+		document.getElementById("myButton").onclick=function() {
+			
+			if(document.getElementById("myId").value=="rain"){
+				alert("Its raining !!");
+			}			
+			else {
+				alert("Its not raining !!");
+			}	
+		}
+		
+	</script>
+	
+</body>
+</html>

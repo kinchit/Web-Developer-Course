@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+    <title>Learning JQuery</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<script type="text/javascript" src="jquery.min.js"></script>
+	
+	<style type="text/css">
+		#circle {
+			width: 100px;
+			height: 100px;
+			background-color: green;
+			border-radius: 100px;
+		}
+		
+		.square {
+			width: 300px;
+			height: 300px;
+			background-color: red;
+			margin-top: 10px;
+		}
+	
+	</style>
+	
+</head>
+<body>
+	
+	<div id="circle"></div>
+	
+	<p>This is some text</p>
+	
+	<iframe src="http://www.cnn.com"></iframe>
+	
+	<div class="square"></div>
+	
+	<div class="square"></div>
+	
+	
+	<p class="paragraph">This is the text that will fade away.</p>
+	
+	<button id="button" type="button">Fade Out!</button>
+	
+	<button id="button1" type="button">Fade In!</button>
+	
+	<script>
+		
+		$("#circle").click(function() {
+			//Displays the old content of the html
+			/*alert($("p").html());
+			
+				//Updates the contents of the element
+				$("p").html("The text is updated on click!!");*/
+			
+			$(this).animate({
+				width:"300px",
+				height:"300px",
+				borderRadius: "150px",
+				marginLeft: "100px",
+				marginTop: "50px"
+			}, 1500);
+						   });
+			
+		
+/*		$("#circle").hover(function() {
+				//Updates the contents of the element
+				$("p").html("The text is updated on hover!!");
+			
+				//Pop-up gives the details about the src in first attribute and second //attribute updates the src to new address
+				alert($("iframe").attr("src", "https://www.facebook.com"));
+						   });*/
+		
+		$("div").click(function() {
+			// Click square to get width
+			//alert($(".square").css("width"));
+			
+			//click any element in div to get css width
+			//$(this).css("width", "400px");
+			
+			//Display to non when the elements are clicked
+			//$(this).hide();
+			//or
+			//$(this).css("display", "none");
+			//or
+			//fadeout on clicking
+			//$(this).fadeOut();
+			
+			
+		});
+		
+		
+		$("#button").click(function () {
+			$(".paragraph").fadeOut(2000);
+		});
+		
+		$("#button1").click(function () {
+			$(".paragraph").fadeIn(1000);
+			/*$(".paragraph").fadeIn("1000", function() {
+				$(".paragraph").display();
+			});*/
+		});
+		
+		
+		//Resex example where we check if string contains exp - Its case sensitive
+		//adding 'i' makes the search case insensitive
+		var exp = /great/i;
+		
+		var string = "This is Great";
+		
+		var value = string.match(exp);
+		
+		alert(value);
+		
+	</script>
+	
+</body>
+</html>
